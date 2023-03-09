@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>HTML and CSS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="23a3ea3a-50dd-406f-82bf-b057e50e0002" class="page sans"><header><h1 class="page-title">HTML and CSS</h1></header><div class="page-body"><h1 id="3a6e0602-13b8-4cb8-8787-7da96c1aa575" class="">Chapter One: Introduction to HTML</h1><p id="c76c1f22-a056-4f58-bf03-47793acf9921" class="">HTML, or Hypertext Markup Language, is the standard markup language used to create web pages. It is the foundation upon which all websites are built. HTML provides a way to structure and present content on the web, making it readable and accessible to users.</p><p id="de475cce-ffee-478d-9bf6-fd5ff0c22156" class="">
+</p><p id="e035f434-b4c1-42b0-aaa3-8c6e87975dd7" class="">HTML was first developed by Tim Berners-Lee in 1989, and it has undergone several updates and revisions since then. The most recent version of HTML is HTML5, which was released in 2014. HTML5 introduced new features and elements, making it more powerful and flexible than its predecessors.</p><p id="c750676b-5ac1-482f-97e3-454b087469d8" class="">HTML is a markup language, which means that it uses tags and attributes to define the structure and presentation of content. HTML tags are enclosed in angle brackets (&lt; and &gt;), and they indicate the beginning and end of an HTML element. Attributes provide additional information about the element and are included within the opening tag.</p><p id="f50181ec-46bc-4e47-b58c-0cad4279e9dd" class="">Here&#x27;s an example of a simple HTML document:</p><pre id="66348c4f-d238-4e97-9f16-2ecb3aa13d27" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to my website!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="3882d944-ff67-49b7-95d7-7135c00f5b1d" class="">Let&#x27;s break this down:</p><ul id="0150ed54-fb21-48ee-a514-7a507ba2a7d6" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;!DOCTYPE html&gt;</strong></code> declaration at the beginning tells the browser that this is an HTML5 document.</li></ul><ul id="02bc7131-fc45-426a-bd67-597ed12fc06f" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;html&gt;</strong></code> element is the root element of the document, and it contains all other elements.</li></ul><ul id="70c685d0-0387-40be-bd9b-1514b5762eeb" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;head&gt;</strong></code> element contains metadata about the document, such as the page title.</li></ul><ul id="19f28b0c-e7bf-4379-b7f4-fd4781001fc0" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;title&gt;</strong></code> element sets the title of the page, which appears in the browser&#x27;s title bar.</li></ul><ul id="9023cd47-ecea-47d9-924c-7d8cbc75c434" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;body&gt;</strong></code> element contains the visible content of the page.</li></ul><ul id="0192e4cd-cf28-4ffe-9004-4fcb14098b7f" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;h1&gt;</strong></code> element is a heading element, and it indicates that the text following it is a top-level heading.</li></ul><ul id="2b81ee6e-5531-4c8f-a589-530b65852540" class="bulleted-list"><li style="list-style-type:disc">The <code><strong>&lt;p&gt;</strong></code> element is a paragraph element, and it contains a block of text.</li></ul><p id="5cf4ba65-faae-4478-b508-4d936e376653" class="">HTML is not a programming language, but rather a markup language used to structure content on the web. It is designed to be human-readable and accessible to all, regardless of technical background.</p><p id="0f4b4c1a-bf4f-4259-8ec0-aa19b2105ac9" class="">In the next chapter, we&#x27;ll dive deeper into HTML syntax and elements.</p><hr id="e130a65c-f706-462a-b85f-c5397a6aee72"/><h1 id="85f18c96-475c-4142-a2a5-8a09a3c5e91a" class="">Chapter Two: HTML Formatting</h1><p id="bbd19e83-e3f0-4630-aaff-cb5771514790" class="">HTML provides a variety of formatting elements that can be used to structure and style content on the web. These elements include headings, paragraphs, lists, links, and more.</p><p id="00308f7e-7fe0-417e-9934-74c773f85986" class="">Headings:</p><p id="400ef368-cd33-4103-80b8-517316de653b" class="">Headings are used to indicate the organization and hierarchy of content on a web page. There are six levels of headings, ranging from <code><strong>&lt;h1&gt;</strong></code> to <code><strong>&lt;h6&gt;</strong></code>. <code><strong>&lt;h1&gt;</strong></code> is the most important heading, and <code><strong>&lt;h6&gt;</strong></code> is the least important.</p><p id="cb399256-69dc-4526-afac-43ffd496e3cf" class="">Example:</p><pre id="d1d75571-98bd-4a0c-9e65-384c67c62f2c" class="code"><code>&lt;h1&gt;This is a top-level heading&lt;/h1&gt;
+&lt;h2&gt;This is a subheading&lt;/h2&gt;
+&lt;h3&gt;This is a sub-subheading&lt;/h3&gt;</code></pre><p id="23e0d012-1ac9-47cf-bdae-86190f4c131c" class="">Paragraphs:</p><p id="95dc95d6-5054-4bfb-937f-7e1a1fe074b6" class="">Paragraphs are used to group together blocks of text. They are created using the <code><strong>&lt;p&gt;</strong></code> element.</p><p id="81e05832-a0dd-4f84-bc9f-7b749bbd1be2" class="">Example:</p><pre id="ff0b59f8-38f0-443b-80b3-66cc9abd3af4" class="code"><code>&lt;p&gt;This is a paragraph of text. It can contain multiple sentences and line breaks.&lt;/p&gt;</code></pre><p id="0709d9ce-0453-4877-89ca-1d6f66d5f687" class="">Lists:</p><p id="032f85ec-73ac-4126-aff7-add330d8eb30" class="">There are two types of lists in HTML: ordered lists and unordered lists.</p><p id="53165740-cbbb-4cce-9de7-45c928ea29ae" class="">Ordered lists are created using the <code><strong>&lt;ol&gt;</strong></code> element, and each item in the list is created using the <code><strong>&lt;li&gt;</strong></code> element. Ordered lists are numbered by default, but the numbering can be customized using CSS.</p><p id="aa563f94-66c3-48d1-b5d4-64fedbc62239" class="">Example:</p><pre id="4fd5b189-8649-49c3-9cc4-5cc38aad58f8" class="code"><code>&lt;ol&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li&gt;Item two&lt;/li&gt;
+  &lt;li&gt;Item three&lt;/li&gt;
+&lt;/ol&gt;</code></pre><p id="47aa29aa-9136-4bab-b0d2-f310675d4d5e" class="">Unordered lists are created using the <code><strong>&lt;ul&gt;</strong></code> element, and each item in the list is created using the <code><strong>&lt;li&gt;</strong></code> element. Unordered lists are bulleted by default, but the style of the bullet can be customized using CSS.</p><p id="1a5ab1db-8fde-4c70-98c4-78238148daef" class="">Example:</p><pre id="db00a04f-7ff3-42c3-a6ce-d13b141748b4" class="code"><code>&lt;ul&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li&gt;Item two&lt;/li&gt;
+  &lt;li&gt;Item three&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p id="d7571484-3ae0-4f6c-88fc-2f19c6f99c9a" class="">Links:</p><p id="b93f097c-dac4-4008-bee9-fd42c2ae2451" class="">Links are created using the <code><strong>&lt;a&gt;</strong></code> element, and they allow users to navigate to other web pages or resources. Links are defined using the <code><strong>href</strong></code> attribute, which specifies the URL of the page or resource being linked to.</p><p id="0ce042d3-be77-4178-becc-3247ca90cae9" class="">Example:</p><pre id="0a20df95-488b-49f7-8cc0-57b61251213b" class="code"><code>&lt;a href=&quot;https://www.example.com&quot;&gt;Visit Example.com&lt;/a&gt;</code></pre><p id="cb5e6681-429e-43c8-a7a5-44774b2d5fcc" class="">Images:</p><p id="f210a156-305f-4635-b636-e2937414f922" class="">Images are displayed using the <code><strong>&lt;img&gt;</strong></code> element, and they allow you to include visual content on your web page. Images are defined using the <code><strong>src</strong></code> attribute, which specifies the URL of the image file.</p><p id="b6dbcea8-8093-43da-b470-165f783aaa4e" class="">Example:</p><pre id="13e1f2d0-e2c5-428e-9379-281157739ac1" class="code"><code>&lt;img src=&quot;image.jpg&quot; alt=&quot;A description of the image&quot;&gt;</code></pre><p id="1aa953f4-3905-44da-b797-00c522cfcb0d" class="">These are just a few examples of the formatting elements available in HTML. In the next chapter, we&#x27;ll explore how to add multimedia content, such as audio and video, to your web pages.</p><hr id="2eecb2f5-7f21-4be9-85f7-eaf5bd6e3542"/><h1 id="a6e86c97-f1a7-47f8-8f01-199df98d106a" class="">Chapter Three: HTML Images and Media</h1><p id="893c8711-5878-43af-a043-eceba5098a23" class="">In addition to text and links, HTML allows you to add multimedia content, such as images, audio, and video, to your web pages. These elements can be used to enhance the visual and auditory experience of your website.</p><p id="ab456f59-c5fd-42cc-94e6-7c10858aee85" class="">Images:</p><p id="fc32b5d3-d26f-44e6-8074-b05b17509f18" class="">Images are displayed using the <code><strong>&lt;img&gt;</strong></code> element, which is a self-closing tag. The <code><strong>src</strong></code> attribute specifies the URL of the image file, and the <code><strong>alt</strong></code> attribute provides a description of the image for users who are unable to see it.</p><p id="0b18b1e6-aa1f-4e3c-8eb7-bef9d25c12a6" class="">Example:</p><pre id="3b8e2272-b4f1-4e4c-b7f2-e174e7f85a4f" class="code"><code>&lt;img src=&quot;image.jpg&quot; alt=&quot;A description of the image&quot;&gt;</code></pre><p id="ec05b0dd-5b24-4321-a139-67f35c740521" class="">Images can also be hyperlinked, allowing users to click on the image to navigate to another page or resource.</p><p id="94311656-df9e-4e83-a9bf-f747b241cc78" class="">Example:</p><pre id="8a0b7df5-3a08-44cd-80e4-34db9b818243" class="code"><code>&lt;a href=&quot;https://www.example.com&quot;&gt;&lt;img src=&quot;image.jpg&quot; alt=&quot;A description of the image&quot;&gt;&lt;/a&gt;</code></pre><p id="aae29c21-1fd7-49c2-b219-05fd143ed9e0" class="">Audio:</p><p id="0ff8038c-66a2-4370-aaa1-2aee77cd4dbe" class="">Audio files can be embedded in web pages using the <code><strong>&lt;audio&gt;</strong></code> element. The <code><strong>src</strong></code> attribute specifies the URL of the audio file, and the <code><strong>controls</strong></code> attribute adds player controls, such as play, pause, and volume.</p><p id="3d801968-d614-46d6-a31d-184a6c74f656" class="">Example:</p><pre id="8e1294c8-8b3f-452a-8d7d-b826ad0cf102" class="code"><code>&lt;audio src=&quot;audio.mp3&quot; controls&gt;&lt;/audio&gt;</code></pre><p id="4e3b9db2-9ab8-430d-8a36-1524c3609832" class="">Video:</p><p id="191e8ef8-0626-44aa-8c82-a947ce77ac3d" class="">Video files can be embedded in web pages using the <code><strong>&lt;video&gt;</strong></code> element. The <code><strong>src</strong></code> attribute specifies the URL of the video file, and the <code><strong>controls</strong></code> attribute adds player controls. You can also add multiple source files to support different browsers and devices.</p><p id="6efb0c91-a484-4e23-a2f7-316e7fdc28ef" class="">Example:</p><pre id="212b4ae3-63e8-4427-b85b-cbbfef4d1051" class="code"><code>&lt;video controls&gt;
+  &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;video.webm&quot; type=&quot;video/webm&quot;&gt;
+  &lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;</code></pre><p id="a2426e73-4b23-4eac-aed0-7b6e6e682b10" class="">In addition to these elements, HTML also provides several other multimedia-related elements, such as <code><strong>&lt;source&gt;</strong></code> for specifying alternative media sources, <code><strong>&lt;track&gt;</strong></code> for subtitles and captions, and <code><strong>&lt;figure&gt;</strong></code> and <code><strong>&lt;figcaption&gt;</strong></code> for grouping and captioning images and videos.</p><p id="cae27610-ad4a-4cea-878d-bfce13ea8a1c" class="">When using multimedia content on your web pages, it&#x27;s important to consider accessibility and user experience. Provide alternative descriptions for images and transcripts for audio and video content to ensure that your website is accessible to all users.</p><hr id="48cead73-47a1-4b17-b5dd-628927d856c3"/><h1 id="d17a9b19-c3a4-46dc-a866-b02d4a824c3c" class="">Chapter Four: HTML Forms</h1><p id="42e50824-5340-47dd-a9a1-d3256492572a" class="">HTML forms allow you to collect data from users, such as their name, email address, or other information. Forms can be used for a variety of purposes, such as surveys, registrations, and contact forms.</p><p id="c231e786-e24f-437f-8ca2-e50723f858ea" class="">Form Structure:</p><p id="e910f7b5-74bd-43c5-b003-006f20e7edfe" class="">Forms are created using the <code><strong>&lt;form&gt;</strong></code> element, which contains one or more form elements. The <code><strong>action</strong></code> attribute specifies the URL of the script or page that will process the form data, and the <code><strong>method</strong></code> attribute specifies the HTTP method to use when submitting the form (usually either <code><strong>GET</strong></code> or <code><strong>POST</strong></code>).</p><p id="22f40252-c6fd-463a-b6bb-226f2e27d909" class="">Example:</p><pre id="c4ffaf08-fb4e-40c9-9bb1-b5cd2db91cd9" class="code"><code>&lt;form action=&quot;process.php&quot; method=&quot;POST&quot;&gt;
+  &lt;!-- form elements go here --&gt;
+&lt;/form&gt;</code></pre><p id="622a5f1d-426e-4053-a704-1f1ea22450f9" class="">Form Elements:</p><p id="86bd0be9-d105-4581-bee3-06141d575107" class="">There are several types of form elements available in HTML, including text fields, radio buttons, checkboxes, dropdown menus, and more.</p><p id="1d5c456d-23f6-4f34-92f9-275c81f0a772" class="">Text Fields:</p><p id="07de0c06-dcdd-42bb-b94a-111bbf2fd5c7" class="">Text fields allow users to enter text, such as their name or email address. They are created using the <code><strong>&lt;input&gt;</strong></code> element with the <code><strong>type</strong></code> attribute set to <code><strong>text</strong></code>.</p><p id="8302f3ab-f7d7-4ac6-a830-b470f3b6bfb5" class="">Example:</p><pre id="5bf8880d-b411-4565-a615-0847945789b7" class="code"><code>&lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;</code></pre><p id="c41f554c-de2b-473d-8448-cc4541adeadc" class="">Radio Buttons:</p><p id="43c742b7-fc11-4f15-a6de-d02d6322ad11" class="">Radio buttons allow users to select one option from a set of options. They are created using the <code><strong>&lt;input&gt;</strong></code> element with the <code><strong>type</strong></code> attribute set to <code><strong>radio</strong></code>. Each radio button should have a unique <code><strong>value</strong></code> attribute.</p><p id="d181a675-c65c-43b9-a5cf-05901924fe91" class="">Example:</p><pre id="3ae3673d-8686-45d2-aa87-4a07d076aada" class="code"><code>&lt;label&gt;Gender:&lt;/label&gt;
+&lt;input type=&quot;radio&quot; id=&quot;male&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
+&lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;
+&lt;input type=&quot;radio&quot; id=&quot;female&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+&lt;label for=&quot;female&quot;&gt;Female&lt;/label&gt;</code></pre><p id="1bc8dbd2-d9de-4a48-b81c-06332bb53de8" class="">Checkboxes:</p><p id="ec86d2f4-d03e-4082-ac8c-642f12134d19" class="">Checkboxes allow users to select one or more options from a set of options. They are created using the <code><strong>&lt;input&gt;</strong></code> element with the <code><strong>type</strong></code> attribute set to <code><strong>checkbox</strong></code>. Each checkbox should have a unique <code><strong>value</strong></code> attribute.</p><p id="077880e3-8fd6-41d1-bd01-571086d67d91" class="">Example:</p><pre id="90d69961-6f7d-497c-b74d-d442e90d3faa" class="code"><code>&lt;label&gt;Interests:&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;reading&quot; name=&quot;interests&quot; value=&quot;reading&quot;&gt;
+&lt;label for=&quot;reading&quot;&gt;Reading&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;sports&quot; name=&quot;interests&quot; value=&quot;sports&quot;&gt;
+&lt;label for=&quot;sports&quot;&gt;Sports&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;music&quot; name=&quot;interests&quot; value=&quot;music&quot;&gt;
+&lt;label for=&quot;music&quot;&gt;Music&lt;/label&gt;</code></pre><p id="82a9f26e-2d03-4a36-af98-94f9d7ed39b8" class="">Dropdown Menus:</p><p id="a892c1fa-aa30-4c34-a403-15090dbad5af" class="">Dropdown menus allow users to select one option from a list of options. They are created using the <code><strong>&lt;select&gt;</strong></code> element with one or more <code><strong>&lt;option&gt;</strong></code> elements nested inside. The <code><strong>value</strong></code> attribute of the selected option will be sent when the form is submitted.</p><p id="b08c55a0-3cd8-4049-8491-637b77f7b5d9" class="">Example:</p><pre id="c4128706-3185-482b-b7d6-7328fbc08be6" class="code"><code>&lt;label&gt;Country:&lt;/label&gt;
+&lt;select name=&quot;country&quot;&gt;
+  &lt;option value=&quot;USA&quot;&gt;United States&lt;/option&gt;
+  &lt;option value=&quot;Canada&quot;&gt;Canada&lt;/option&gt;
+  &lt;option value=&quot;UK&quot;&gt;United Kingdom&lt;/option&gt;
+&lt;/select&gt;</code></pre><p id="13a124bd-ba9e-4443-a429-586bd014cd48" class="">Form Submission:</p><p id="369e1183-1cd9-4237-872a-02bb2c76a5d2" class="">When the user submits the form, the form data is sent to the server for processing. The server can then use the data to perform various actions, such as sending an email or storing the data in a database.</p><p id="9158663f-9039-4fb1-8df6-e6f53c786457" class="">In the next chapter, we&#x27;ll explore how to use CSS to style and layout your HTML forms.</p><hr id="ea9d3afe-460d-4318-a7b9-36e1a6ba8e69"/><h1 id="99adafc4-9138-4d14-b2cc-7330e1b1fa8e" class="">Chapter Five: Introduction to CSS</h1><p id="2fe544c8-a503-4d71-95eb-9c95354fa67a" class="">Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML. CSS allows you to apply styles to HTML elements, such as fonts, colors, and layout, in order to improve the visual design of your web pages.</p><p id="fee79fa7-b1dc-4368-8fb3-125762dc9365" class="">CSS Syntax:</p><p id="635ddfe7-1e83-4465-b45a-adf37f194f9f" class="">CSS consists of selectors and declarations. A selector selects the HTML element(s) to apply the style to, while the declaration defines the style itself.</p><p id="ddec8160-c1eb-4e7a-865b-45037ec598f1" class="">Example:</p><pre id="1aad60d7-4a8b-4a48-a4da-15108841921f" class="code"><code>selector {
+  property: value;
+}</code></pre><p id="70837b5e-aa63-4a2b-abeb-b6a90d35474d" class="">In the above example, the selector selects the HTML element(s) to apply the style to, and the property defines what aspect of the style we want to change (such as font size or color), while the value specifies the actual value for the property.</p><p id="9d06ca14-ad68-45da-9b94-1334caefe073" class="">CSS Selectors:</p><p id="2aca82ea-a26f-435b-9e23-7143b4e2e1d5" class="">CSS provides a variety of selectors to target specific HTML elements, such as <code><strong>element selectors</strong></code>, <code><strong>class selectors</strong></code>, and <code><strong>ID selectors</strong></code>.</p><p id="cc87e9c7-96b6-499a-b246-2bd5c5a28633" class="">Element Selectors:</p><p id="7d9cc89a-a3a7-4181-a541-ee727c29f3b7" class="">Element selectors target HTML elements by their tag name. For example, the following CSS rule sets the font size for all <code><strong>&lt;p&gt;</strong></code> elements on a page:</p><pre id="cd9f2ad2-27ac-442e-abd6-6cc50d6bfcae" class="code"><code>p {
+  font-size: 16px;
+}</code></pre><p id="c9d3f673-1624-4c33-b46d-d5187f99a35e" class="">Class Selectors:</p><p id="808fdf67-e8d0-4058-aadd-b0e943a150c1" class="">Class selectors target HTML elements with a specific class attribute. For example, the following CSS rule sets the font color for all elements with the class &quot;highlight&quot;:</p><pre id="e1d50614-9506-4fba-b22b-939af4b0ae45" class="code"><code>.highlight {
+  color: red;
+}</code></pre><p id="8cf2f7df-af6e-4f8c-9440-ba93076a83b4" class="">ID Selectors:</p><p id="6b9776c1-8577-481f-a439-774df5569560" class="">ID selectors target a specific HTML element by its <code><strong>id</strong></code> attribute. For example, the following CSS rule sets the background color for the element with the <code><strong>id</strong></code> of &quot;header&quot;:</p><pre id="311aacc3-1a23-4892-9a46-1e54335c15e3" class="code"><code>#header {
+  background-color: gray;
+}</code></pre><p id="e236aef2-df78-4b3f-a63b-0499c9b923b2" class="">CSS Properties:</p><p id="7bf5f627-bc03-4a7d-a7c5-000f8150c041" class="">CSS provides a wide range of properties that can be used to style HTML elements. Some commonly used properties include:</p><ul id="5ee3a0b5-de39-4dbb-8e5e-d24d2ae3aa71" class="bulleted-list"><li style="list-style-type:disc"><code><strong>color</strong></code>: sets the text color</li></ul><ul id="9e869db2-1190-4fb0-8dbd-a9e58605b5bb" class="bulleted-list"><li style="list-style-type:disc"><code><strong>font-family</strong></code>: sets the font family</li></ul><ul id="514113c1-be6f-4d22-874f-1572301158fa" class="bulleted-list"><li style="list-style-type:disc"><code><strong>font-size</strong></code>: sets the font size</li></ul><ul id="3fae7abd-4e4b-4c4b-aee8-242b2fb71aee" class="bulleted-list"><li style="list-style-type:disc"><code><strong>background-color</strong></code>: sets the background color</li></ul><ul id="115b3f21-2535-4252-b6d8-f93e9dee9ffe" class="bulleted-list"><li style="list-style-type:disc"><code><strong>border</strong></code>: sets the border properties</li></ul><p id="92f342f6-87aa-4abc-ab65-f79fb13d5cca" class="">CSS Box Model:</p><p id="74f3c629-84f4-4717-bbb9-f1cf18600a77" class="">The CSS box model is a way to represent the layout of an HTML element. It consists of four layers: the content layer, the padding layer, the border layer, and the margin layer. The content layer contains the actual content of the element, while the padding layer surrounds the content with empty space. The border layer surrounds the padding with a border, and the margin layer creates space between the element and other elements on the page.</p><p id="8769ce36-bd7c-4d6b-bcb5-7445e68017c4" class="">Example:</p><pre id="bcc6a58d-d37e-46e9-8496-7001ca9bacb6" class="code"><code>div {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border: 2px solid black;
+  margin: 10px;
+}</code></pre><p id="92ba1541-087d-4ac6-be83-a01cfb38bb15" class="">In the above example, the CSS rule sets the width and height of the <code><strong>div</strong></code> element, as well as the padding, border, and margin properties.</p><p id="b23436ef-0078-4562-a4f8-e64fbfad7147" class="">Conclusion:</p><p id="27ddf6da-0d03-46f2-baee-1a38156812aa" class="">CSS is a powerful tool for improving the design and layout of your HTML documents. By using CSS selectors and properties, you can create visually appealing and user-friendly web pages. In the next chapter, we&#x27;ll explore some advanced CSS techniques, such as layout and positioning.</p><hr id="7f9feccd-d36c-430e-8f30-e6e3503a9f85"/><h1 id="6a767460-dcd0-4eb4-92d1-cb4f57a591e3" class="">Chapter Six: CSS Layout</h1><p id="e4535ba3-21ef-4356-b2a8-1f572a939033" class="">CSS layout is an essential part of creating visually appealing and user-friendly web pages. With CSS, you can control the positioning, size, and spacing of HTML elements to create a layout that meets your design requirements. In this chapter, we&#x27;ll explore some common CSS layout techniques.</p><p id="3ec91759-dd09-4e43-a883-c4085bb37922" class="">CSS Display Property:</p><p id="bd5d6614-c715-4c99-96a4-4ee40b9f4d0b" class="">The <code><strong>display</strong></code> property is one of the most fundamental layout properties in CSS. It specifies how an HTML element should be displayed on the page. Some common values for the <code><strong>display</strong></code> property include:</p><ul id="fbe7d6a0-71dd-46be-8776-1f096c3ce614" class="bulleted-list"><li style="list-style-type:disc"><code><strong>block</strong></code>: displays an element as a block-level element, taking up the full width of its parent container and creating a line break after the element</li></ul><ul id="f8b9b591-9b70-4e1c-9489-1f536a2cd827" class="bulleted-list"><li style="list-style-type:disc"><code><strong>inline</strong></code>: displays an element as an inline-level element, allowing it to flow within a line of text and only taking up as much width as necessary</li></ul><ul id="739ee2c9-b787-4356-9ba9-9f0e3eedc15c" class="bulleted-list"><li style="list-style-type:disc"><code><strong>inline-block</strong></code>: displays an element as an inline-level element but with the dimensions of a block-level element, allowing it to have padding and margins</li></ul><p id="c5256a0e-2c13-4655-8c6b-89832b535ae5" class="">CSS Positioning:</p><p id="94a78df3-a1e0-46ff-9175-0955f49ff431" class="">CSS positioning allows you to control the position of HTML elements on a page. There are several positioning methods available, including:</p><ul id="178e824e-c9b5-4c41-89b3-5fa5034de712" class="bulleted-list"><li style="list-style-type:disc"><code><strong>static</strong></code>: the default positioning method, where the element is positioned according to the normal flow of the document</li></ul><ul id="f36e56ff-c4d7-4277-bd17-ec20d197b193" class="bulleted-list"><li style="list-style-type:disc"><code><strong>relative</strong></code>: positions an element relative to its normal position, using the <code><strong>top</strong></code>, <code><strong>bottom</strong></code>, <code><strong>left</strong></code>, and <code><strong>right</strong></code> properties to specify its position</li></ul><ul id="6c2fddcc-47e2-4de2-8408-a5935c068ecd" class="bulleted-list"><li style="list-style-type:disc"><code><strong>absolute</strong></code>: positions an element relative to its nearest positioned ancestor, using the <code><strong>top</strong></code>, <code><strong>bottom</strong></code>, <code><strong>left</strong></code>, and <code><strong>right</strong></code> properties to specify its position</li></ul><ul id="3001fca1-ccf6-4681-a7a3-79bfbff33ced" class="bulleted-list"><li style="list-style-type:disc"><code><strong>fixed</strong></code>: positions an element relative to the browser window, using the <code><strong>top</strong></code>, <code><strong>bottom</strong></code>, <code><strong>left</strong></code>, and <code><strong>right</strong></code> properties to specify its position</li></ul><p id="73018d96-06a3-4906-81cd-8b28875091ea" class="">CSS Box Sizing:</p><p id="ff1b276f-fefc-42b5-a1b0-e1ab9d8a5b6f" class="">The <code><strong>box-sizing</strong></code> property allows you to control how the total width and height of an element is calculated, taking into account its padding and border. Some common values for the <code><strong>box-sizing</strong></code> property include:</p><ul id="431b9fda-0e54-4c7f-a47f-56582950f6ab" class="bulleted-list"><li style="list-style-type:disc"><code><strong>content-box</strong></code>: the default value, where the width and height of an element only include its content and exclude its padding and border</li></ul><ul id="008872c6-c26b-469a-a90b-060349a47548" class="bulleted-list"><li style="list-style-type:disc"><code><strong>border-box</strong></code>: includes the padding and border within the element&#x27;s total width and height</li></ul><p id="27259250-27dc-4136-8b23-02ef48eebbec" class="">CSS Flexbox:</p><p id="0ed6d979-116f-4f91-ae4b-c2c48f585afc" class="">Flexbox is a powerful CSS layout module that allows you to create flexible and responsive layouts. With flexbox, you can control the positioning and sizing of elements within a container, allowing you to create complex layouts without the need for complicated CSS code.</p><p id="73f81815-251b-4646-b901-1cab08754d83" class="">CSS Grid:</p><p id="a0b8ebdd-3b09-4c4e-9759-fd8cc483aeed" class="">CSS Grid is another powerful CSS layout module that allows you to create complex and dynamic grid-based layouts. With CSS Grid, you can divide a page into a grid of rows and columns, and then place elements within that grid, controlling their position and size.</p><p id="28bc9de6-4e60-4a17-b685-867865dcb2fb" class="">Conclusion:</p><p id="06349ee0-89b9-4606-a44f-4a4ee87a17a9" class="">CSS layout is an essential part of creating visually appealing and user-friendly web pages. By using CSS positioning, display, box sizing, and layout modules such as flexbox and grid, you can create complex and dynamic layouts that meet your design requirements.</p><hr id="77e8f578-58fc-4138-93bf-6fbff974326f"/><h1 id="e3809058-28cf-4ab0-8fb2-66a630547699" class="">Chapter Seven: CSS Typography</h1><p id="726af756-9a6c-44c6-8a37-c81e6112e390" class="">Typography is an important aspect of web design, as it affects the readability, usability, and overall visual appeal of a website. With CSS, you can control the font family, size, color, and other typography-related properties of your web page&#x27;s text. In this chapter, we&#x27;ll explore some common CSS typography techniques.</p><p id="e1bb5714-0d82-49c1-8724-2603e7ecc13a" class="">CSS Font Family:</p><p id="6b6fdfad-a4bb-4a47-af3b-58ede0736d6d" class="">The <code><strong>font-family</strong></code> property is used to set the font for an HTML element. You can specify multiple font families, separated by commas, to provide fallback options in case the user&#x27;s browser does not support the first font. Some common font families include:</p><ul id="d57794d7-9a5e-4f6e-8794-c25851b02cc9" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Arial, Helvetica, sans-serif</strong></code>: a popular sans-serif font family</li></ul><ul id="7d40af23-84be-4b51-9a44-b0d611da3122" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Georgia, Times, serif</strong></code>: a popular serif font family</li></ul><ul id="f2d2b586-f294-43a2-af20-af03c91205f1" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Courier New, Courier, monospace</strong></code>: a font family with fixed-width characters</li></ul><p id="10518089-3168-4162-b25a-e3cad90a6706" class="">CSS Font Size:</p><p id="64794c01-f521-4044-b9da-852f7d8a4297" class="">The <code><strong>font-size</strong></code> property is used to set the size of the font for an HTML element. You can specify the font size in pixels, ems, rems, or other units of measurement. Some common font sizes include:</p><ul id="c1e2f7d4-1fe4-4735-87c4-ab2bdb10d768" class="bulleted-list"><li style="list-style-type:disc"><code><strong>16px</strong></code>: a common font size for body text</li></ul><ul id="f34ffffe-76bf-42ca-873b-4ffa273843fa" class="bulleted-list"><li style="list-style-type:disc"><code><strong>1.2em</strong></code>: equivalent to 120% of the parent element&#x27;s font size</li></ul><ul id="0713e093-eb18-4a96-ba4b-6d61e78ac613" class="bulleted-list"><li style="list-style-type:disc"><code><strong>1.5rem</strong></code>: equivalent to 150% of the root element&#x27;s font size</li></ul><p id="d1af8553-7ebc-483e-b0bf-57fc0d77deb2" class="">CSS Font Weight:</p><p id="8e45dd66-a153-41bf-a699-1d42d09cc4be" class="">The <code><strong>font-weight</strong></code> property is used to set the weight (or thickness) of the font for an HTML element. You can specify the font weight as a numeric value or using keywords such as <code><strong>bold</strong></code> or <code><strong>lighter</strong></code>. Some common font weights include:</p><ul id="fd2e3b53-4656-497f-910e-a3b416e6265b" class="bulleted-list"><li style="list-style-type:disc"><code><strong>400</strong></code>: a common font weight for regular text</li></ul><ul id="5d46efae-0b98-4c5d-8762-6fe6a9112a95" class="bulleted-list"><li style="list-style-type:disc"><code><strong>700</strong></code>: a common font weight for bold text</li></ul><p id="4761eaf0-5d99-44d2-a920-e637a50c5b54" class="">CSS Text Color:</p><p id="9de0f2d1-2428-4730-95e0-f97a266a0b4e" class="">The <code><strong>color</strong></code> property is used to set the color of the text for an HTML element. You can specify the color using keywords such as <code><strong>red</strong></code> or <code><strong>blue</strong></code>, hexadecimal color codes, or RGB values. Some common text colors include:</p><ul id="40bf248c-7bb6-4b32-a397-3eaab36218d3" class="bulleted-list"><li style="list-style-type:disc"><code><strong>#333333</strong></code>: a dark gray color often used for body text</li></ul><ul id="0f852f08-74ad-4d06-9ad9-a75a0d0f0280" class="bulleted-list"><li style="list-style-type:disc"><code><strong>#FFFFFF</strong></code>: white text on a black background for high contrast</li></ul><p id="5f7cf7a8-97c2-4590-9ed2-143c45c61fee" class="">CSS Text Alignment:</p><p id="e5e47ebb-494b-43e6-9aa6-ce23079f0adc" class="">The <code><strong>text-align</strong></code> property is used to set the horizontal alignment of text within an HTML element. You can specify the alignment as <code><strong>left</strong></code>, <code><strong>center</strong></code>, <code><strong>right</strong></code>, or <code><strong>justify</strong></code>. Justified text aligns the text to both the left and right edges of the container, creating a clean and symmetrical look.</p><p id="4065f123-79b2-4ac7-b66f-44c05a26a4d6" class="">CSS Line Height:</p><p id="05b109a8-9e6c-4911-99a3-ce3f5b06625a" class="">The <code><strong>line-height</strong></code> property is used to set the height of a line of text within an HTML element. A good line height helps to improve the readability of text and is often set to a value slightly larger than the font size. Some common line heights include:</p><ul id="e45f01e1-e1da-43ca-87a7-c5331fad27d1" class="bulleted-list"><li style="list-style-type:disc"><code><strong>1.5</strong></code>: a line height of 150% of the font size</li></ul><ul id="4824f9c7-2666-4328-9825-1f8be5046112" class="bulleted-list"><li style="list-style-type:disc"><code><strong>1.8</strong></code>: a line height of 180% of the font size</li></ul><p id="f7f3bbf1-d671-4f32-9279-12ec8f549ac0" class="">Conclusion:</p><p id="3244be80-993b-499d-8b36-437c44ac9e0e" class="">Typography plays a crucial role in web design, and with CSS, you can control the font family, size, color, weight, alignment, and line height of your web page&#x27;s text. By using these CSS typography techniques, you can create text that is visually appealing, easy to read, and contributes to a positive user experience.</p><hr id="b6dd448c-af3b-443a-93da-4d05f3a0d5fe"/><h1 id="96ae5f2e-2a3c-486e-a684-a0e170d1f125" class="">Chapter Eight: CSS Colors and Backgrounds</h1><p id="328ac662-5cc9-46ea-8dda-4f771fa770c6" class="">Colors and backgrounds are important visual elements that contribute to the overall look and feel of a website. With CSS, you can control the color and background properties of your HTML elements. In this chapter, we&#x27;ll explore some common CSS techniques for working with colors and backgrounds.</p><p id="c67083da-1ec9-4cac-a8d9-a55370600820" class="">CSS Color Property:</p><p id="cb524424-77b9-46a0-a315-6527ff102c64" class="">The <code><strong>color</strong></code> property is used to set the text color of an HTML element. You can specify the color using keywords such as <code><strong>red</strong></code> or <code><strong>blue</strong></code>, hexadecimal color codes, or RGB values. Some common text colors include:</p><ul id="e26a269e-1c60-407a-9376-1221ee2fa951" class="bulleted-list"><li style="list-style-type:disc"><code><strong>#333333</strong></code>: a dark gray color often used for body text</li></ul><ul id="9b806558-3688-402b-855c-1cf928278c62" class="bulleted-list"><li style="list-style-type:disc"><code><strong>#FFFFFF</strong></code>: white text on a black background for high contrast</li></ul><p id="8117a4b4-f0cd-49b1-bdf7-738c103f0c7e" class="">CSS Background Color Property:</p><p id="3eeb08b3-6e10-4b68-b923-31bcff380f83" class="">The <code><strong>background-color</strong></code> property is used to set the background color of an HTML element. You can specify the color using keywords such as <code><strong>red</strong></code> or <code><strong>blue</strong></code>, hexadecimal color codes, or RGB values. Some common background colors include:</p><ul id="4d3c5438-82e0-4aba-b9cb-bf78aa3c179e" class="bulleted-list"><li style="list-style-type:disc"><code><strong>#FFFFFF</strong></code>: white background color</li></ul><ul id="04f8f7ea-7e7d-4067-9d46-6ddbf1ed2adb" class="bulleted-list"><li style="list-style-type:disc"><code><strong>#F5F5F5</strong></code>: light gray background color</li></ul><p id="318b64c9-0459-408c-b56d-bb5f7a8ad8c1" class="">CSS Background Image Property:</p><p id="ebb7b35f-6cd2-4624-a19a-6b23ddd737da" class="">The <code><strong>background-image</strong></code> property is used to set a background image for an HTML element. You can specify the image file path or URL, and the image will be repeated to fill the entire background area of the element. Some common background images include:</p><ul id="4506091b-ad7c-4f4b-9d65-63e7a104daee" class="bulleted-list"><li style="list-style-type:disc">A repeating pattern or texture</li></ul><ul id="3bf32ba2-3948-49b0-8e4b-30c5fc0fa756" class="bulleted-list"><li style="list-style-type:disc">A full-width hero image</li></ul><p id="842c886c-c930-4d72-b9d4-7f56e090b8ef" class="">CSS Background Position Property:</p><p id="9273f676-fc6a-4d6e-a28e-b51170ff55fe" class="">The <code><strong>background-position</strong></code> property is used to set the position of a background image within an HTML element. You can specify the position using keywords such as <code><strong>center</strong></code> or <code><strong>top</strong></code>, or using pixel or percentage values for the horizontal and vertical position. Some common background positions include:</p><ul id="2784679c-879c-48bb-a600-40e7d5ae1a49" class="bulleted-list"><li style="list-style-type:disc"><code><strong>center</strong></code>: centers the background image both horizontally and vertically</li></ul><ul id="06a8b0c4-8ee6-4613-8fda-f0106785625a" class="bulleted-list"><li style="list-style-type:disc"><code><strong>top right</strong></code>: aligns the background image to the top-right corner of the element</li></ul><p id="efc384da-d93c-453c-8f76-921789bfa2f9" class="">CSS Background Repeat Property:</p><p id="5bc2bcbf-53f5-4887-8d1e-8024568ea6c4" class="">The <code><strong>background-repeat</strong></code> property is used to set the repetition of a background image within an HTML element. You can specify the repetition as <code><strong>repeat-x</strong></code>, <code><strong>repeat-y</strong></code>, or <code><strong>no-repeat</strong></code>. Some common background repetitions include:</p><ul id="af3558e1-d8c7-4632-9889-4689af07702e" class="bulleted-list"><li style="list-style-type:disc"><code><strong>repeat</strong></code>: repeats the background image horizontally and vertically</li></ul><ul id="efc57c14-2d50-455c-b416-13b86318f4b7" class="bulleted-list"><li style="list-style-type:disc"><code><strong>no-repeat</strong></code>: displays the background image only once, without repetition</li></ul><p id="f6391276-80ac-4a69-95d6-880e35e16bd1" class="">CSS Background Attachment Property:</p><p id="3f43b580-d15b-4b0e-a3ec-35a16ac2bdee" class="">The <code><strong>background-attachment</strong></code> property is used to set whether a background image should scroll or remain fixed when the user scrolls the web page. You can specify the attachment as <code><strong>scroll</strong></code> or <code><strong>fixed</strong></code>. Some common background attachments include:</p><ul id="63186ab8-4c91-4e0a-bac6-50af1259f23f" class="bulleted-list"><li style="list-style-type:disc"><code><strong>scroll</strong></code>: the background image scrolls along with the rest of the web page</li></ul><ul id="bd988273-e93a-4ed9-ac9e-f952ca767810" class="bulleted-list"><li style="list-style-type:disc"><code><strong>fixed</strong></code>: the background image remains fixed in place while the rest of the web page scrolls</li></ul><p id="7f005d7a-23f4-4975-9801-d2d98a97a545" class="">CSS Opacity Property:</p><p id="005cf10e-5905-4005-9b4c-aa05aae298d6" class="">The <code><strong>opacity</strong></code> property is used to set the opacity (or transparency) of an HTML element. You can specify the opacity as a value between 0 and 1, where 0 is completely transparent and 1 is completely opaque. Some common opacity values include:</p><ul id="0082d2c2-a271-42a0-900a-73678974aff7" class="bulleted-list"><li style="list-style-type:disc"><code><strong>0.5</strong></code>: sets the element to 50% opacity</li></ul><ul id="b08598df-b02c-4989-b358-0820fba378c3" class="bulleted-list"><li style="list-style-type:disc"><code><strong>0.8</strong></code>: sets the element to 80% opacity</li></ul><p id="5cab2768-aa0e-43c4-ac65-3199ee9ca4b1" class="">Conclusion:</p><p id="e15c8a8a-73c3-4572-ad2e-50877d567bfa" class="">Colors and backgrounds are important visual elements that contribute to the overall look and feel of a website. With CSS, you can control the color and background properties of your HTML elements. By using these CSS color and background techniques, you can create a visually appealing and engaging website.</p><hr id="7362bfaf-8d05-4657-a1bd-15b4ab940d41"/><h1 id="abee46b1-3a05-49b1-b2bf-f89bf12e7ee5" class="">Chapter Nine: Responsive Design</h1><p id="b1dafb22-697b-4728-8429-6a4375419c65" class="">In today&#x27;s world, websites are being accessed on a variety of devices with different screen sizes and resolutions. Responsive web design is a technique that allows a website to adapt its layout and content to fit different screen sizes and devices. In this chapter, we&#x27;ll explore the concept of responsive design and some common techniques for implementing it.</p><p id="9a36f3da-04f0-4c19-bdcd-ada2579f0342" class="">What is Responsive Design?</p><p id="b13848c6-7fb5-4342-976d-93441bf789ff" class="">Responsive design is an approach to web design that aims to provide an optimal viewing and browsing experience across different devices and screen sizes. The idea is to create a flexible design that can adjust to the dimensions of the user&#x27;s device, whether it&#x27;s a desktop computer, tablet, or smartphone.</p><p id="bd7ffce8-8a23-4e5d-83a8-e5b9bea113d6" class="">Responsive design is achieved through a combination of flexible grids, layouts, images, and media queries. These techniques allow the website to respond to the user&#x27;s device and adjust its layout and content accordingly.</p><p id="5674435b-1506-4290-bb69-344f6119c73b" class="">Flexible Grids and Layouts:</p><p id="31e51665-f4ab-4309-8e72-79b788269c18" class="">A flexible grid is a layout that uses relative sizing and positioning to adapt to different screen sizes. This is achieved by using percentages or em units instead of fixed pixel sizes. A flexible grid can be divided into columns, which can then be stacked vertically or horizontally depending on the screen size.</p><p id="3b9b427c-5ecc-4d26-99d6-6595e39e7f6d" class="">Media Queries:</p><p id="77a93803-fa5b-44f7-b81c-5c6467cd4463" class="">Media queries are CSS rules that apply different styles based on the characteristics of the user&#x27;s device, such as the screen size, orientation, and resolution. Media queries allow you to target specific devices and adjust the layout and content accordingly.</p><p id="4df02d1e-69b8-4759-b42f-b29f00aa73ce" class="">Responsive Images:</p><p id="44f25834-0d8a-448a-93ce-0fe359ed3bf4" class="">Images can also be made responsive by using techniques such as fluid images and responsive images. Fluid images are images that adjust their width and height based on the size of their container. Responsive images, on the other hand, use different image files or sizes depending on the user&#x27;s device.</p><p id="a38b1e50-ad2f-467c-a10b-9fb74d1eb931" class="">Responsive Navigation:</p><p id="4a235678-b86f-424d-853c-680f4095bb6a" class="">Navigation menus can also be made responsive by using techniques such as off-canvas navigation or drop-down menus. Off-canvas navigation hides the navigation menu off-screen and reveals it when the user clicks a menu button. Drop-down menus collapse the menu items into a single button or icon, which expands when the user clicks it.</p><p id="252ab99f-299c-4e18-816a-7c8fca35fa62" class="">Conclusion:</p><p id="4957db3c-0f93-4893-891e-c4bdf37a0dd8" class="">Responsive design is a crucial aspect of modern web design, as it allows websites to be accessible and user-friendly across a variety of devices and screen sizes. By using flexible grids, media queries, responsive images, and navigation, you can create a website that looks great and functions well on any device. With responsive design, you can provide your users with an optimal browsing experience, regardless of the device they&#x27;re using.</p><hr id="1479e02a-0d8d-4ed0-977d-8799cc036d36"/><h1 id="4a72f747-ea0b-4c73-9d8c-2a1c320c1cd7" class="">Chapter Ten: CSS Flexbox</h1><p id="9d2891d9-9a27-4400-98ac-ff61db35f753" class="">CSS Flexbox is a powerful layout module that allows you to create flexible and responsive layouts with ease. In this chapter, we&#x27;ll explore the basics of CSS Flexbox and some common use cases.</p><p id="fb43eefa-466a-48df-a07f-910c2afc5373" class="">What is CSS Flexbox?</p><p id="c17487f5-2274-43ff-9bcf-3637bc3112a1" class="">CSS Flexbox is a layout module that allows you to create flexible and responsive layouts without using floats or positioning. Flexbox works by dividing the available space into flexible boxes, which can be aligned, stretched, and ordered in a variety of ways.</p><p id="83b2e20a-5c37-4db9-8c90-e26447f5d04f" class="">Flexbox Properties:</p><p id="e8d12881-d9ed-467e-8f0f-11d901f0dc85" class="">There are several CSS properties that you can use to create a Flexbox layout. Here are some of the most commonly used properties:</p><ul id="d0ab8335-b146-4f75-af3f-a5229e3c6172" class="bulleted-list"><li style="list-style-type:disc"><code>display: flex;</code> - This property turns an element into a Flexbox container.</li></ul><ul id="ce0a0289-02d7-4142-afc1-2c1c0570c183" class="bulleted-list"><li style="list-style-type:disc"><code>flex-direction</code> - This property defines the direction of the Flexbox layout, whether it&#x27;s horizontal or vertical.</li></ul><ul id="026cc690-715a-4769-97fd-02c3b55e010a" class="bulleted-list"><li style="list-style-type:disc"><code>justify-content</code> - This property defines how the Flexbox items are aligned along the main axis.</li></ul><ul id="897966c8-0661-490d-a6ca-c99dffb07c04" class="bulleted-list"><li style="list-style-type:disc"><code>align-items</code> - This property defines how the Flexbox items are aligned along the cross-axis.</li></ul><ul id="80d62e39-7a94-4186-a0e4-23509140f3c8" class="bulleted-list"><li style="list-style-type:disc"><code>flex-wrap</code> - This property defines whether the Flexbox items should wrap to a new line or not.</li></ul><ul id="12a5e8a8-2a12-448e-8b7f-bb1bbd5f8845" class="bulleted-list"><li style="list-style-type:disc"><code>flex-grow</code> - This property defines how much a Flexbox item should grow in relation to the other items.</li></ul><ul id="974d4cb1-dfcc-44a5-9996-fea3d0db046a" class="bulleted-list"><li style="list-style-type:disc"><code>flex-shrink</code> - This property defines how much a Flexbox item should shrink in relation to the other items.</li></ul><ul id="57ff6c25-8187-49ac-a13d-5371f0795842" class="bulleted-list"><li style="list-style-type:disc"><code>flex-basis</code> - This property defines the initial size of a Flexbox item before any stretching or shrinking occurs.</li></ul><p id="83b80d48-f6d6-45e0-a749-d496c955343a" class="">Common Use Cases:</p><p id="f264c37e-bcab-44b8-aea4-73da81596afb" class="">CSS Flexbox can be used in a variety of ways to create flexible and responsive layouts. Here are some common use cases:</p><ul id="9161392f-35c2-4493-a35b-2a1c1dfb374b" class="bulleted-list"><li style="list-style-type:disc">Navigation menus - Flexbox can be used to create horizontal or vertical navigation menus that are responsive and flexible.</li></ul><ul id="4932ca1f-be00-4adc-b9ff-256ac6dd9c86" class="bulleted-list"><li style="list-style-type:disc">Grid layouts - Flexbox can be used to create grid layouts that adjust to different screen sizes and devices.</li></ul><ul id="beb78842-f04d-4cd2-aa88-9d85e9a4fb5c" class="bulleted-list"><li style="list-style-type:disc">Card layouts - Flexbox can be used to create card layouts that adjust to the size and content of the cards.</li></ul><ul id="ba99df73-f3bb-45db-b7a0-8f0870e081b9" class="bulleted-list"><li style="list-style-type:disc">Centering content - Flexbox can be used to center content both horizontally and vertically.</li></ul><p id="cd2ba958-d9e7-4359-8d27-bc7421395fc8" class="">Conclusion:</p><p id="3c30575d-d6a7-4980-9962-60623c3b9301" class="">CSS Flexbox is a powerful layout module that allows you to create flexible and responsive layouts with ease. By using the various Flexbox properties, you can create layouts that adjust to different screen sizes and devices. Flexbox can be used in a variety of ways to create navigation menus, grid layouts, card layouts, and more. With CSS Flexbox, you can create beautiful and functional layouts that provide your users with an optimal browsing experience.</p><hr id="5011f4fe-f2ed-4cb1-a607-3b99294a75e3"/><h1 id="c9cdcb4c-9aaa-4c54-bc50-1d00d9a9e202" class="">Chapter Eleven: CSS Transitions and Animations</h1><p id="ac323487-155c-4e95-8e7a-d37c46cd3c35" class="">CSS Transitions and Animations are two powerful tools that allow you to add dynamic and engaging effects to your web pages. In this chapter, we&#x27;ll explore the basics of CSS Transitions and Animations and how to use them effectively.</p><p id="8d6274a6-1484-4d91-b713-50db741f3ac8" class="">CSS Transitions:</p><p id="52662aae-f85c-4c94-bdab-016d8e554b87" class="">CSS Transitions allow you to add animation effects to an element when it changes state, such as when it&#x27;s hovered over or clicked. Here are the basic steps to create a CSS Transition:</p><ol type="1" id="da3a3228-c850-486a-b881-c2d28c3f7f06" class="numbered-list" start="1"><li>Select the element you want to apply the transition to.</li></ol><ol type="1" id="861c1116-6575-43c1-88c4-2407afaa754b" class="numbered-list" start="2"><li>Define the CSS property you want to transition.</li></ol><ol type="1" id="873a287c-7e66-449e-975b-9ccea3cc6215" class="numbered-list" start="3"><li>Set the duration and timing function for the transition.</li></ol><ol type="1" id="981c2db1-8a6b-4dde-a10a-40fad517cf55" class="numbered-list" start="4"><li>Define the starting and ending values of the CSS property.</li></ol><p id="d443c82e-a544-42ff-b59e-51060c9dc440" class="">For example, you can add a transition to change the background color of a button when it&#x27;s hovered over:</p><pre id="cdb03f6b-7e62-4432-8f76-79bf502d422b" class="code"><code>button {
+  background-color: blue;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: red;
+}</code></pre><p id="7ddfd775-cfec-4815-bede-1bf007e09cab" class="">This code will transition the button&#x27;s background color from blue to red over a duration of 0.3 seconds with an ease-in-out timing function.</p><p id="55c346bc-3ef2-4456-809b-51445580ab95" class="">CSS Animations:</p><p id="963b0c10-6692-40aa-b71b-9a221d4249da" class="">CSS Animations allow you to create more complex and dynamic animations that can be triggered by various events, such as when a page loads or when an element is clicked. Here are the basic steps to create a CSS Animation:</p><ol type="1" id="9be6a082-22db-4f84-a728-563736869ae5" class="numbered-list" start="1"><li>Define the animation keyframes using the @keyframes rule.</li></ol><ol type="1" id="212af22c-d862-472a-8328-c179e14e7304" class="numbered-list" start="2"><li>Assign the animation to an element using the animation property.</li></ol><ol type="1" id="b830ebb9-7edc-4472-a52e-f6348523fc14" class="numbered-list" start="3"><li>Define the duration, timing function, delay, and iteration count for the animation.</li></ol><p id="01e10a6a-b007-458a-8104-f06b8716b004" class="">For example, you can create a spinning animation for a button when it&#x27;s clicked:</p><pre id="d64c8b00-bda6-4c05-87f4-6968c173e22e" class="code"><code>button {
+  animation: spin 2s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}</code></pre><p id="579dd925-6f89-4190-99d3-c44ce13b5db4" class="">This code will create a spinning animation for the button that rotates it 360 degrees over a duration of 2 seconds with an ease-in-out timing function.</p><p id="cb6e6da3-9e58-4f69-8401-e82f02ad5bec" class="">Tips for Using CSS Transitions and Animations:</p><ul id="4bf7b699-5abd-4777-b2d8-e9c339e7ff78" class="bulleted-list"><li style="list-style-type:disc">Use transitions and animations sparingly and strategically to avoid overwhelming your users with too many effects.</li></ul><ul id="0d48f9b6-2308-4d0d-b990-3d12e0f58e92" class="bulleted-list"><li style="list-style-type:disc">Be mindful of the performance impact of using transitions and animations, especially on mobile devices.</li></ul><ul id="7890877b-9613-4132-a12a-2dbceac90289" class="bulleted-list"><li style="list-style-type:disc">Experiment with different timing functions and durations to achieve the desired effect.</li></ul><ul id="fba32311-0bef-46be-aabc-e20e8f509f3e" class="bulleted-list"><li style="list-style-type:disc">Test your transitions and animations across different browsers and devices to ensure they work properly.</li></ul><p id="f669454b-d7d2-4015-89f0-8d26e91c3f18" class="">Conclusion:</p><p id="abeddc0b-a6c9-4bdc-bedf-3f86f5d10536" class="">CSS Transitions and Animations are powerful tools that allow you to add dynamic and engaging effects to your web pages. By using transitions and animations strategically, you can create a more engaging user experience and bring your web pages to life. With the right timing functions, durations, and keyframes, you can create stunning and memorable effects that will leave a lasting impression on your users.</p><hr id="16a927f2-210e-4b19-b1f0-b4d942787a19"/><h1 id="c2e533ff-5af1-4b1c-9af2-cee8ae191c39" class="">Chapter Twelve: Advanced CSS</h1><p id="559061d0-9e66-4fd4-817d-59921d9e3484" class="">In this chapter, we&#x27;ll dive into some more advanced CSS techniques and concepts that can help take your web design skills to the next level.</p><ol type="1" id="9e4fbbef-c746-4c54-847d-0b4a1713c8c5" class="numbered-list" start="1"><li>CSS Selectors:</li></ol><p id="e6fd7eb2-debf-4b2f-865d-ea45e04374ab" class="">CSS Selectors are a powerful way to target specific HTML elements and apply styles to them. There are many different types of CSS Selectors, including class selectors, ID selectors, attribute selectors, and pseudo-class selectors. By using these selectors effectively, you can create more specific and targeted styles for your web pages.</p><ol type="1" id="961c0348-a209-45d8-b0c7-e76ae1f42d23" class="numbered-list" start="1"><li>CSS Specificity:</li></ol><p id="26df27b7-26e1-4e03-b2d3-555e41ff3f26" class="">CSS Specificity is a concept that determines which styles are applied to an element when there are conflicting styles. Each CSS Selector has a specificity score that determines how specific it is. The more specific the selector, the higher its specificity score, and the more likely it is to override other styles.</p><ol type="1" id="7b263162-9554-4270-9d52-859b0b3e880e" class="numbered-list" start="1"><li>CSS Preprocessors:</li></ol><p id="5309e960-81a2-4c5a-a903-50cb337a3894" class="">CSS Preprocessors, such as Sass and Less, are tools that allow you to write CSS more efficiently and with more advanced features. Preprocessors allow you to use variables, mixins, and functions to create more modular and reusable CSS code. They also provide features like nested styles and mathematical operations, which can save you time and make your code more readable.</p><ol type="1" id="f1e3d117-6861-44cd-8a3d-80ef0ebcae36" class="numbered-list" start="1"><li>CSS Grid:</li></ol><p id="13a91a32-4a57-4583-a0e2-275d536d7e23" class="">CSS Grid is a layout system that allows you to create complex and flexible layouts with ease. With CSS Grid, you can define rows and columns of a grid, and then place HTML elements within those rows and columns. This allows you to create complex and responsive layouts that adapt to different screen sizes and devices.</p><ol type="1" id="714cecda-fc39-4b4a-b0f4-229c4ff375a1" class="numbered-list" start="1"><li>CSS Frameworks:</li></ol><p id="68b5f5b4-f0a9-487f-8162-2772d251e701" class="">CSS Frameworks, such as Bootstrap and Foundation, are pre-built collections of CSS styles and components that you can use to quickly build responsive and professional-looking websites. These frameworks provide a set of standardized styles and components, such as buttons, forms, and navigation menus, that can save you time and effort in building your website.</p><ol type="1" id="b4713e9b-612e-4735-9a34-501a5e3d7ecc" class="numbered-list" start="1"><li>CSS Animation Libraries:</li></ol><p id="3f2e3b3a-a799-4c14-80ce-3b75bb0f3e61" class="">CSS Animation Libraries, such as Animate.css and Hover.css, provide pre-built CSS animations and effects that you can easily add to your web pages. These libraries allow you to create stunning and engaging animations without having to write complex CSS code from scratch.</p><p id="a6f80638-9f3b-4f91-90c0-fecfd376dacd" class="">Conclusion:</p><p id="0a168f7a-1791-47de-84ca-9173cbed0bb8" class="">Advanced CSS techniques and concepts can help take your web design skills to the next level. By using CSS Selectors, Specificity, Preprocessors, Grid, Frameworks, and Animation Libraries effectively, you can create more efficient, modular, and engaging web designs. These advanced techniques can also help you save time and effort in building your web pages, while still creating professional-looking and responsive websites. With practice and experimentation, you can master these advanced CSS concepts and create stunning and memorable web designs.</p><hr id="b41355eb-d7cc-4661-a16b-a12318726e9f"/><h1 id="30517106-1d5e-44db-9040-97ad06d2fa60" class="">Chapter Thirteen: Apply HTML and CSS knowledge to create a small website</h1><p id="257b7d2b-c353-4a0a-8cdc-3bb0082ea46f" class="">Now that you have learned the fundamentals of HTML and CSS, it&#x27;s time to put your knowledge into practice by creating a small website. In this project, you will create a simple website that showcases your skills in HTML and CSS.</p><p id="32f917f9-fd7e-45e7-87d9-b659d0f00028" class="">Step 1: Define the Website Purpose and Content</p><p id="687baf1b-2c59-4feb-bc5b-1db368423375" class="">Before you start building your website, you need to define its purpose and content. Think about the message you want to convey and the audience you want to reach. Then, create a list of pages and content that will be included on the website.</p><p id="b6f284e3-968f-402d-bb39-90286f24635a" class="">Step 2: Plan the Website Design</p><p id="f87ab69e-e9e8-43c6-bb46-d42eee3520f9" class="">Once you have defined the purpose and content of your website, it&#x27;s time to plan its design. Sketch out a rough layout of the website, including the navigation, header, footer, and content areas. Think about the color scheme, typography, and other design elements that you want to include.</p><p id="48869501-f522-4e51-a7a5-fa57c1a4be6b" class="">Step 3: Build the HTML Structure</p><p id="78c1543c-d0ec-4f78-a586-cb58217a9faa" class="">With your website design planned out, it&#x27;s time to start building the HTML structure. Begin by creating the basic HTML structure, including the doctype, html, head, and body tags. Then, create the necessary HTML tags for each page and section of your website, such as header, footer, navigation, and content areas.</p><p id="5e044316-c3b3-44d2-880e-4fc7cf396cd7" class="">Step 4: Add CSS Styles</p><p id="95ccc67b-dfcc-4f4a-89e2-d87f5654aca0" class="">Once you have built the HTML structure, it&#x27;s time to add CSS styles to your website. Use the design elements you planned out earlier to create a cohesive and visually appealing design. Apply CSS styles to the HTML tags, using selectors, specificity, and other advanced CSS concepts to create targeted and efficient styles.</p><p id="bb406270-4107-492d-a7c7-0a4ba41b2927" class="">Step 5: Test and Refine</p><p id="355f1485-7ef0-427e-a304-048e8472fb18" class="">After you have built your website, it&#x27;s important to test it on different devices and browsers to ensure that it works correctly and looks good. Make any necessary adjustments to the HTML and CSS to refine your website design and ensure that it is accessible and user-friendly.</p><p id="6b09f334-cf3a-43c3-8b04-ca6bca4420b4" class="">Conclusion:</p><p id="e2449f27-440b-4ae2-9af9-10c6000e8f4f" class="">By completing this project, you will have applied your HTML and CSS knowledge to create a small website that showcases your skills. This project will help you develop your web design skills and gain confidence in building websites. With continued practice and experimentation, you can further refine your skills and create even more complex and engaging web designs.</p></div></article></body></html>
